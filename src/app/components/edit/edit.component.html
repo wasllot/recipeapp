@@ -1,0 +1,118 @@
+
+  <div class="row">
+
+    <div class="col-md-10 mx-auto mt-2">
+
+      <div class="card">
+
+          <div class="card-header">Edit recipe</div>
+
+          <div class="card-body">
+
+            <form #formModificar="ngForm" (ngSubmit)="onModificarReceta(formModificar)">
+
+              <div class="form-group shadow-textarea">
+
+                <label for="titulo">Title</label>
+
+                <input type="text" class="form-control z-depth-1" id="titulo" name="titulo"
+                [(ngModel)]="receta.titulo">
+
+              </div>
+
+              <div class="form-group shadow-textarea">
+
+                <label for="descripcion">Description</label>
+
+                <textarea type="text" class="form-control z-depth-1" id="descripcion" rows="8" name="descripcion"
+                [(ngModel)]="receta.descripcion"></textarea>
+
+              </div>
+
+              <div class="form-group shadow-textarea">
+
+                <label for="ingredientes">Ingredients</label>
+
+                <textarea type="text" class="form-control z-depth-1" id="ingredientes" rows="8" name="ingredientes"
+                [(ngModel)]="receta.ingredientes"></textarea>
+
+              </div>
+
+              <div class="form-group shadow-textarea">
+
+                <label for="preparacion">Preparation</label>
+
+                <textarea type="text" class="form-control z-depth-1" id="preparacion" rows="8" name="preparacion"
+                [(ngModel)]="receta.preparacion"></textarea>
+
+              </div>
+
+              <div class="form-group shadow-textarea">
+
+                <label for="tipo">Type</label>
+
+                <span class="badge badge-pill badge-dark" *ngFor="let item of receta.tipo">{{item}}</span>
+
+                <select multiple="" name="tipo" id="tipo" class="form-control z-depth-1"
+                [(ngModel)]="receta.tipo">
+                  <option>Breakfast</option>
+                  <option>Dinner</option>
+                  <option>Dessert</option>
+                  <option>Lunch</option>
+                  <option>Snack</option>
+                  <option>Wedding</option>
+                  <option>Dressings</option>
+                  <option>Drinks</option>
+                  <option>Healthy</option>
+                </select>
+
+              </div>
+
+              <div class="input-group py-2">
+
+                <div class="custom-file">
+
+                  <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" value="Upload an image" (change)="upload($event)" accept=".png, .jpg, .jpeg">
+
+                  <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+
+                </div>
+
+              </div>
+
+              <div class="container py-2 text-center" *ngIf="loading">
+
+                <img src="../../../assets/loading.gif" alt="">
+
+              </div>            
+
+              <div class="container py-2 text-center" *ngIf="receta.url && !loading">
+
+                <img src="{{receta.url}}" alt="" class="img-fluid">
+
+              </div>              
+
+                <div *ngIf="url && !loading" class="alert alert-info py-2" role="alert">
+                  
+                  File uploaded: <a [href]="url">{{url}}</a>
+
+                </div>
+
+                <br><br>
+
+              <input type="submit" value="Edit" class="btn btn-primary btn-block">
+
+            </form>
+         </div>
+
+         <div class="container py-2 text-center">
+
+            <a href="/details/{{receta.id}}"><i class="fa fa-chevron-left fa-2x"></i></a>   
+
+         </div>
+
+      </div>
+
+    </div>
+    
+  </div>

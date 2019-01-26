@@ -1,0 +1,69 @@
+<div class="container">
+	<h2 class="h1-responsive">
+		Results
+	</h2>
+	<hr>
+</div>
+
+<div class="container">
+	
+	<div class="d-flex justify-content-center align-items-center h-100">
+
+		<img src="../../../assets/load4.gif" alt="" *ngIf="loading">
+	
+	
+	<div *ngIf="recetas_filtered.length>0 && !loading">
+		<div class="gal">
+			<div *ngFor="let receta of recetas_filtered">
+			    <a href="/details/{{receta.id}}" class="link">
+		            <div class="view overlay">
+		              <img src="{{receta.url}}" alt="{{receta.name}}">
+		                <div class="mask flex-center rgba-stylish-light">
+		                  <p class="white-text">{{receta.titulo}}</p>
+
+		                </div> 
+		             </div>
+		        </a>
+	       
+	            <div class="mb-1 text-muted">
+	              <span class="badge badge-pill badge-success">{{receta.fechaPublicacion | date: 'dd-MMM'}}</span>
+	            </div>
+				
+			</div>
+		</div>
+		
+	</div>
+
+	<div *ngIf="!recetas_filtered">
+
+		<h2 class="h1-responsive">
+			Not found
+		</h2>
+		
+	</div>
+	<!-- <div *ngIf="!loading">
+		<div class="gal">
+			<div *ngFor="let receta of recetas">
+			    <a href="/details/{{receta.id}}" class="link">
+		            <div class="view overlay">
+		              <img src="{{receta.url}}" alt="{{receta.name}}">
+		                <div class="mask flex-center rgba-stylish-light">
+		                  <p class="white-text">{{receta.titulo}}</p>
+
+		                </div> 
+		             </div>
+		        </a>
+	       
+	            <div class="mb-1 text-muted">
+	              <span class="badge badge-pill badge-success">{{receta.fechaPublicacion | date: 'dd-MMM'}}</span>
+	            </div>
+				
+			</div>
+		</div>
+		
+	</div> -->
+
+
+  </div>
+</div>
+

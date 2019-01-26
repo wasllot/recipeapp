@@ -1,0 +1,82 @@
+
+<div class="container mb-2">
+
+  <div class="d-flex align-items-center justify-content-center py-4">
+
+    <div class="btn-group pull-right mt-4 flex-inline " *ngIf="idUsuarioLogado == receta.userId">
+
+      <a routerLink="/edit/{{receta.id}}" class="btn btn-dark mx-2">Editar</a>
+
+      <a  class="btn btn-danger mx-2" (click)="onClickDelete()">Borrar</a>
+
+    </div>
+
+  </div>
+
+  <div class="card card-cascade wider reverse">
+
+    <div class="view view-cascade overlay">
+
+      <img class="card-img-top" src="{{receta.url}}" alt="Card image cap">
+
+      <a href="#!">
+
+        <div class="mask rgba-white-slight"></div>
+
+      </a>
+
+    </div>
+
+    <div class="card-body card-body-cascade text-center">
+
+      <h4 class="card-title"><strong>{{receta.titulo}}</strong></h4>
+
+      <h6 class="font-weight-bold indigo-text py-2">{{receta.fechaPublicacion | date: 'dd-MMM'}}</h6>
+
+      <p class="card-text" style="white-space:pre-wrap;">{{receta.descripcion}}
+      </p>
+
+      <hr>
+
+      <div class="container">
+
+        <h2 class="h1-responsive text-center">
+          Ingredients
+        </h2>
+
+        <p class="card-text text-left" style="white-space:pre-wrap;">{{receta.ingredientes}}</p>
+
+      </div>
+
+      <hr>    
+
+      <div class="container">
+
+        <h2 class="h1-responsive text-center">
+          Preparation
+        </h2>
+
+        <p class="card-text text-justify" style="white-space:pre-wrap;">{{receta.preparacion}}</p>
+
+      </div>
+
+      <hr>
+
+      <div class="container">
+
+        <span class="badge badge-pil py-2" *ngFor="let item of receta.tipo">{{item}}</span>
+
+      </div>
+
+    </div>
+
+    <div class="div mt-2 mb-4 text-center">
+
+      <a href="/"><i class="fa fa-chevron-left fa-2x"></i></a>   
+
+    </div>
+      
+    
+  </div>
+
+</div>

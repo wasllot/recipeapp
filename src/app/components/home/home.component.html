@@ -1,0 +1,175 @@
+<div class="container-fluid mt-4">
+
+  <div class="row">
+
+    <div class="col-12  py-0 featcard">
+
+       <div id="featured" class="carousel slide carousel-fade" data-ride="carousel">
+
+       <div class="carousel-inner">
+
+        <div class="carousel-item active">        
+
+          <div class="card bg-dark text-white">
+
+            <img class="card-img img-fluid" src="https://images.tenplay.com.au/~/media/TV%20Shows/MasterChef%20Media%20Lib/Galleries%20Season%208/Food%20Of%20The%20Gods%20Heston%20Pop%20Up/MC8_Ep_43_8072.jpg" alt="">
+
+            <div class="card-img-overlay d-flex linkfeat">
+
+              <a href="http://makro.id/review-gsp-amerika-ingin-perdagangan-saling-menguntungkan" class="align-self-end">
+
+                <h4 class="card-title">Kitchen lover? </h4>
+
+              </a>
+
+            </div>
+
+          </div>
+
+         </div>
+
+        <div class="carousel-item">       
+
+          <div class="card bg-dark text-white">
+
+              <img class="card-img img-fluid" src="https://images.tenplay.com.au/~/media/TV%20Shows/MasterChef%20Media%20Lib/Galleries%20Season%208/Food%20Of%20The%20Gods%20Heston%20Pop%20Up/MC8_Ep_43_8178.jpg">
+
+                <a href="http://makro.id/dpr-setujui-penambahan-anggaran-bp-batam-rp565-miliar" class="align-self-end">
+
+                  <h4 class="card-title">Upload new recipes!</h4>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <div class="carousel-item">       
+
+          <div class="card bg-dark text-white">
+
+              <img class="card-img img-fluid" src="http://home.bt.com/images/inspired-by-masterchef-10-tips-for-making-really-great-sauces-136426259673902601-180405074019.jpg" alt="">
+
+              <div class="card-img-overlay d-flex linkfeat">
+
+                <a href="http://makro.id/btn-targetkan-seribu-nasabah-valas-di-batam" class="align-self-end">
+
+                  <h4 class="card-title">I think you can try something like this</h4>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <div class="carousel-item">       
+
+          <div class="card bg-dark text-white">
+
+              <img class="card-img img-fluid" src="https://www.orkneyfoodanddrink.com/assets/images/enlargeable/news/masterchef-2014-141.jpg" alt="">
+
+              <div class="card-img-overlay d-flex linkfeat">
+
+                <a href="http://makro.id/sistem-oss-resmi-diluncurkan" class="align-self-end">
+
+                  <h4 class="card-title">Oh my godness!</h4>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        <div class="carousel-item">       
+
+          <div class="card bg-dark text-white">
+
+              <img class="card-img img-fluid" src="https://img.taste.com.au/sCrAlgRT/taste/2016/11/fork-tender-pork-leg-roast-with-caramelised-plum-vinaigrette-106008-1.jpeg" alt="">
+
+              <div class="card-img-overlay d-flex linkfeat">
+
+                <a href="http://makro.id/grab-gandeng-samsung-telkomsel-dan-erafone" class="align-self-end">
+
+                  <h4 class="card-title">Let us know how expert you are at kitchen</h4>
+
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+      </div>
+
+  </div>
+
+</div>
+
+<br><br>
+
+<div class="row mb-2">
+
+  <div class="container text-center">
+
+    <div class="py-4">
+
+      <h3 class="display-4">Upload a recipe</h3>
+
+    </div>
+
+    <img src="../../../assets/load4.gif" alt="" *ngIf="loading">
+
+      <div class="gal">
+
+        <div *ngFor="let receta of recetas">          
+
+          <div>
+
+            <a href="/details/{{receta.id}}" class="link">
+
+              <div class="view overlay zoom">
+
+                <img src="{{receta.url}}" alt="{{receta.name}}">
+
+                  <div class="mask d-flex flex-column flex-center">
+
+                    <h5 class="white-text">{{receta.titulo}}</h5>
+
+                    <span class="badge badge-pill badge-success" *ngFor="let item of receta.tipo">{{item}}</span>
+
+                  </div> 
+
+               </div>
+
+             </a> 
+
+          </div>
+
+        </div>
+
+      </div>
+
+  </div>
+  
+</div>
+
+<script>
+  $(document).ready(function(){
+      $(".linkfeat").hover(
+        function () {
+            $(".textfeat").show(500);
+        },
+        function () {
+            $(".textfeat").hide(500);
+        }
+    );
+});
+
+</script>
