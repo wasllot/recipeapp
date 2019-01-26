@@ -6,11 +6,11 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyBTYilrh8tS2PK9URpEfhqG32I9aCul4H8",
-    authDomain: "recipeapp-a620e.firebaseapp.com",
-    databaseURL: "https://recipeapp-a620e.firebaseio.com",
-    projectId: "recipeapp-a620e",
-    storageBucket: "recipeapp-a620e.appspot.com",
-    messagingSenderId: "765180820956"
+    apiKey: "YOUR-API-KEY",
+    authDomain: "YOUR-AUTH-DOMAIN",
+    databaseURL: "YOUR-DATABASE-URL",
+    projectId: "YOUR-PROJECT-ID",
+    storageBucket: "YOUR-STORAGE-BUCKET",
+    messagingSenderId: "YOUR-MESSAGE-SENDER-ID"
   }
 };
